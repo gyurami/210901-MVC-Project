@@ -28,6 +28,7 @@ public class DispatcherServlet extends HttpServlet {
 	
 	//▼ service(): 사용자 요청 시 자동호출, 요청처리 → Model찾기 → JSP로 request 전송
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
 		//1. 사용자가 주문 내용을 받음(ko.do(한식), ja.do(일식), ch.do(중식))
 		String cmd=request.getRequestURI();
 		//2. URI전체에서 처리되는 문장만 남김: http://localhost:8080/JSPMVCLastProject/ko.do → ko.do
@@ -39,6 +40,8 @@ public class DispatcherServlet extends HttpServlet {
 		//5. 결과값 넘겨주기
 		RequestDispatcher rd=request.getRequestDispatcher("main/"+jsp);
 		rd.forward(request, response);
+		}catch(Exception e){}
+		
 	}
 
 }
