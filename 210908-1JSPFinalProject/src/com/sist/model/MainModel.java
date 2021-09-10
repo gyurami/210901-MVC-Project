@@ -10,7 +10,9 @@ import com.sist.controller.RequestMapping;
 public class MainModel {
 	@RequestMapping("main/main.do")
 	public String main_main(HttpServletRequest request, HttpServletResponse response) {
+		
 		//include 파일 전송
+		
 		request.setAttribute("main_jsp", "../food/food_main.jsp");
 		
 		return "../main/main.jsp";
