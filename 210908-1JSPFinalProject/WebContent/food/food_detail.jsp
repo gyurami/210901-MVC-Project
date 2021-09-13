@@ -1,212 +1,182 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
 <div class="wrapper row3">
   <div id="breadcrumb" class="clear"> 
-    <!-- ################################################################################################ -->
     <ul>
       <li><a href="#">Home</a></li>
-      <li><a href="#">Lorem</a></li>
-      <li><a href="#">Ipsum</a></li>
-      <li><a href="#">Dolor</a></li>
+      <li><a href="#">맛집</a></li>
+      <li><a href="#">카테고리</a></li>
+      <li><a href="#">상세보기</a></li>
     </ul>
-    <!-- ################################################################################################ --> 
   </div>
 </div>
-<!-- ################################################################################################ --> 
-<!-- ################################################################################################ --> 
 <!-- ################################################################################################ -->
+<!-- ################################################################################################ --> 
 <div class="wrapper row3">
   <main class="container clear"> 
-    <!-- main body --> 
-    <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=db0485ed4f0d0ece879a4510ed7f48e6&libraries=services"></script> -->
-    <!-- ################################################################################################ -->
-    <div class="content three_quarter first"> <!-- two_quarter -->
-      <!-- ################################################################################################ -->
-      <h1>&lt;h1&gt; to &lt;h6&gt; - Headline Colour and Size Are All The Same</h1>
-      <img class="imgr borderedbox inspace-5" src="../images/demo/imgr.gif" alt="">
-      <p>Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur.</p>
-      <p>Dapiensociis <a href="#">temper donec auctortortis cumsan</a> et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem.</p>
-      <img class="imgl borderedbox inspace-5" src="../images/demo/imgl.gif" alt="">
-      <p>This is a W3C compliant free website template from <a href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a>. For full terms of use of this template please read our <a href="https://www.os-templates.com/template-terms">website template licence</a>.</p>
-      <p>You can use and modify the template for both personal and commercial use. You must keep all copyright information and credit links in the template and associated files. For more website templates visit our <a href="https://www.os-templates.com/">free website templates</a> section.</p>
-      <p>Portortornec condimenterdum eget consectetuer condis consequam pretium pellus sed mauris enim. Puruselit mauris nulla hendimentesque elit semper nam a sapien urna sempus.</p>
-      <h1>Table(s)</h1>
-      <div class="scrollable">
-        <table>
-          <thead>
-            <tr>
-              <th>Header 1</th>
-              <th>Header 2</th>
-              <th>Header 3</th>
-              <th>Header 4</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><a href="#">Value 1</a></td>
-              <td>Value 2</td>
-              <td>Value 3</td>
-              <td>Value 4</td>
-            </tr>
-            <tr>
-              <td>Value 5</td>
-              <td>Value 6</td>
-              <td>Value 7</td>
-              <td><a href="#">Value 8</a></td>
-            </tr>
-            <tr>
-              <td>Value 9</td>
-              <td>Value 10</td>
-              <td>Value 11</td>
-              <td>Value 12</td>
-            </tr>
-            <tr>
-              <td>Value 13</td>
-              <td><a href="#">Value 14</a></td>
-              <td>Value 15</td>
-              <td>Value 16</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="comments">
-        <h2>Comments</h2>
-        <ul>
-          <li>
-            <article>
-              <header>
-                <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
-                <address>
-                By <a href="#">A Name</a>
-                </address>
-                <time datetime="2045-04-06T08:15+00:00">Friday, 6<sup>th</sup> April 2045 @08:15:00</time>
-              </header>
-              <div class="comcont">
-                <p>This is an example of a comment made on a post. You can either edit the comment, delete the comment or reply to the comment. Use this as a place to respond to the post or to share what you are thinking.</p>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article>
-              <header>
-                <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
-                <address>
-                By <a href="#">A Name</a>
-                </address>
-                <time datetime="2045-04-06T08:15+00:00">Friday, 6<sup>th</sup> April 2045 @08:15:00</time>
-              </header>
-              <div class="comcont">
-                <p>This is an example of a comment made on a post. You can either edit the comment, delete the comment or reply to the comment. Use this as a place to respond to the post or to share what you are thinking.</p>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article>
-              <header>
-                <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
-                <address>
-                By <a href="#">A Name</a>
-                </address>
-                <time datetime="2045-04-06T08:15+00:00">Friday, 6<sup>th</sup> April 2045 @08:15:00</time>
-              </header>
-              <div class="comcont">
-                <p>This is an example of a comment made on a post. You can either edit the comment, delete the comment or reply to the comment. Use this as a place to respond to the post or to share what you are thinking.</p>
-              </div>
-            </article>
-          </li>
-        </ul>
-        <h2>Write A Comment</h2>
-        <form action="#" method="post">
-          <div class="one_third first">
-            <label for="name">Name <span>*</span></label>
-            <input type="text" name="name" id="name" value="" size="22">
-          </div>
-          <div class="one_third">
-            <label for="email">Mail <span>*</span></label>
-            <input type="text" name="email" id="email" value="" size="22">
-          </div>
-          <div class="one_third">
-            <label for="url">Website</label>
-            <input type="text" name="url" id="url" value="" size="22">
-          </div>
-          <div class="block clear">
-            <label for="comment">Your Comment</label>
-            <textarea name="comment" id="comment" cols="25" rows="10"></textarea>
-          </div>
-          <div>
-            <input name="submit" type="submit" value="Submit Form">
-            &nbsp;
-            <input name="reset" type="reset" value="Reset Form">
-          </div>
-        </form>
-      </div>
-      <!-- ################################################################################################ --> 
+    <div class="content">
+	      <!-- 이미지 출력 START-->
+	      <table class="table">
+	        <tr>
+	          <c:forTokens var="image" items="${vo.poster }" delims="^">
+	            <td class="text-center"><img src="${image }" style="width:100%"></td>
+	          </c:forTokens>
+	        </tr>
+	      </table>
+	      <!-- 이미지 END-->
+    </div>
+    <div class="clear"></div>
+    <div class="content two_quarter first"> <!-- two_quarter -->
+      <!-- 상세 내용 출력 START -->
+      <table class="table">
+        <tr>
+          <td colspan="2">
+            <h3>${vo.name }&nbsp;<span style="color:orange">${vo.score }</span></h3>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-center">주소</th>
+          <td>${vo.addr1 }
+          <br><sup>${vo.addr2 }</sup>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-center">전화번호</th>
+          <td>${vo.tel }</td>
+        </tr>
+        <tr>
+          <th class="text-center">음식종료</th>
+          <td>${vo.type }</td>
+        </tr>
+        <c:if test="${vo.price!='no' }">
+	        <tr>
+	          <th class="text-center">가격대</th>
+	          <td>${vo.price }</td>
+	        </tr>
+        </c:if>
+        <c:if test="${vo.parking!='no' }">
+	        <tr>
+	          <th class="text-center">주차</th>
+	          <td>${vo.parking }</td>
+	        </tr>
+        </c:if>
+        <c:if test="${vo.time!='no' }">
+	        <tr>
+	          <th class="text-center">영업시간</th>
+	          <td>${vo.time }</td>
+	        </tr>
+        </c:if>
+        <c:if test="${vo.menu!='no' }">
+	        <tr>
+	          <th class="text-center">메뉴</th>
+	            <td>
+	              <ul>
+	                <!-- 메뉴명 N원 메뉴명 N원 메뉴명 N원 메뉴명 N원 => 원으로 자름 =>메뉴명에 '원'이 들어간다면...rip -->
+	                <c:forTokens items="${vo.menu }" delims="원" var="m">
+	              		<li>${m }원</li>
+	              	</c:forTokens>
+	              </ul>
+	            </td>
+	        </tr>
+        </c:if>
+        <tr>
+          <td colspan="2">
+            <a href="#" class="btn btn-sm btn-primary">좋아요</a>
+            <a href="#" class="btn btn-sm btn-success">찜하기</a>
+            <a href="#" class="btn btn-sm btn-danger">예약하기</a>
+            <a href="../food/food_list.do?cno=${vo.cno }" class="btn btn-sm btn-info">목록</a>
+          </td>
+        </tr>
+      </table>
+      <!-- 상세 내용 END -->
     </div>
     <!-- ################################################################################################ --> 
     <!-- ################################################################################################ -->
-    <div class="sidebar one_quarter"> <!-- two-quarter -->
-      <!-- ################################################################################################ -->
-      <h6>Lorem ipsum dolor</h6>
-      <nav class="sdb_holder">
-        <ul>
-          <li><a href="#">Navigation - Level 1</a></li>
-          <li><a href="#">Navigation - Level 1</a>
-            <ul>
-              <li><a href="#">Navigation - Level 2</a></li>
-              <li><a href="#">Navigation - Level 2</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Navigation - Level 1</a>
-            <ul>
-              <li><a href="#">Navigation - Level 2</a></li>
-              <li><a href="#">Navigation - Level 2</a>
-                <ul>
-                  <li><a href="#">Navigation - Level 3</a></li>
-                  <li><a href="#">Navigation - Level 3</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="#">Navigation - Level 1</a></li>
-        </ul>
-      </nav>
-      <div class="sdb_holder">
-        <h6>Lorem ipsum dolor</h6>
-        <address>
-        Full Name<br>
-        Address Line 1<br>
-        Address Line 2<br>
-        Town/City<br>
-        Postcode/Zip<br>
-        <br>
-        Tel: xxxx xxxx xxxxxx<br>
-        Email: <a href="#">contact@domain.com</a>
-        </address>
-      </div>
-      <div class="sdb_holder">
-        <article>
-          <h6>Lorem ipsum dolor</h6>
-          <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed.</p>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor sit</a></li>
-            <li>Etiam vel sapien et</li>
-            <li><a href="#">Etiam vel sapien et</a></li>
-          </ul>
-          <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed. Condimentumsantincidunt dui mattis magna intesque purus orci augue lor nibh.</p>
-          <p class="more"><a href="#">Continue Reading &raquo;</a></p>
-        </article>
-      </div>
-      <!-- ################################################################################################ --> 
+    <div class="sidebar two_quarter"> <!-- two-quarter -->
+		<!-- 지도 -->
+		<div id="map" style="width:100%;height:350px;"></div>
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9169e0dd247a06b976b5c454edc5f789&libraries=services"></script>
+		<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = {
+		        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+		        level: 3 // 지도의 확대 레벨
+		    };  
+		
+		// 지도를 생성합니다    
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
+		
+		// 주소-좌표 변환 객체를 생성합니다
+		var geocoder = new kakao.maps.services.Geocoder();
+		
+		// 주소로 좌표를 검색합니다
+		geocoder.addressSearch('%{vo.addr1}', function(result, status) {
+		
+		    // 정상적으로 검색이 완료됐으면 
+		     if (status === kakao.maps.services.Status.OK) {
+		
+		        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+		
+		        // 결과값으로 받은 위치를 마커로 표시합니다
+		        var marker = new kakao.maps.Marker({
+		            map: map,
+		            position: coords
+		        });
+		
+		        // 인포윈도우로 장소에 대한 설명을 표시합니다
+		        var infowindow = new kakao.maps.InfoWindow({
+		            content: '<div style="width:150px;text-align:center;padding:6px 0;">%{vo.name}</div>'
+		        });
+		        infowindow.open(map, marker);
+		
+		        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+		        map.setCenter(coords);
+		    } 
+		});
+		</script>
+		<h3>근처 명소</h3>
+		  <table class="table">
+		    <tr>
+		      <c:forEach var="avo" items="${aList }">
+		        <td>
+		          <img src="${avo.poster }" width=100% title="${avo.title }">
+		        </td>
+		      </c:forEach>
+		    </tr>
+		  </table>
+		<hr>
+		<h3>근처 호텔</h3>
+		<table class="table">
+		    <tr>
+		      <c:forEach var="bvo" items="${bList }">
+		        <td>
+		          <img src="${bvo.poster }" width=100% title="${bvo.name }">
+		        </td>
+		      </c:forEach>
+		    </tr>
+		  </table>
+		<hr>
+		<h3>근처 자연</h3>
+		<table class="table">
+		    <tr>
+		      <c:forEach var="cvo" items="${cList }">
+		        <td>
+		          <img src="${cvo.poster }" width=100% title="${cvo.title }">
+		        </td>
+		      </c:forEach>
+		    </tr>
+		  </table>
+		<hr>
     </div>
-    <!-- ################################################################################################ --> 
-    <!-- / main body -->
     <div class="clear"></div>
   </main>
 </div>

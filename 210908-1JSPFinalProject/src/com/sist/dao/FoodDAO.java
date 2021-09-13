@@ -44,7 +44,7 @@ public class FoodDAO {
 		  }
 	    
 	    
-	    //3-1. 아이디 중복체크
+	    //
 	    public List<CategoryVO> foodCategoryData()
 		  {
 			  System.out.println("DAO연결");
@@ -175,4 +175,120 @@ public class FoodDAO {
 			  }
 			  return vo;
 		  }
+		  
+		  // 맛집 상세보기
+		  public FoodVO foodDetailData(int no) {
+			FoodVO vo=new FoodVO();
+			try {
+				getConnection();
+				String sql="SELECT no,poster,name,score,address,tel,type,price,parking,time,menu,good,soso,bad,cno "
+						+ "FROM project_food_house "
+						+ "WHERE no=?";
+				ps=conn.prepareStatement(sql);
+				ps.setInt(1, no);
+				ResultSet rs=ps.executeQuery();
+				rs.next();
+				vo.setNo(rs.getInt(1));
+				vo.setPoster(rs.getString(2));
+				vo.setName(rs.getString(3));
+				vo.setScore(rs.getDouble(4));
+				vo.setAddress(rs.getString(5));
+				vo.setTel(rs.getString(6));
+				vo.setType(rs.getString(7));
+				vo.setPrice(rs.getString(8));
+				vo.setParking(rs.getString(9));
+				vo.setTime(rs.getString(10));
+				vo.setMenu(rs.getString(11));
+				vo.setGood(rs.getInt(12));
+				vo.setSoso(rs.getInt(13));
+				vo.setBad(rs.getInt(14));
+				vo.setCno(rs.getInt(15));
+				rs.close();
+			}catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				disConnection();
+			}
+			  return vo;
+		  }
+		  
+		  
+		  // 여행 명소
+		  public List<SeoulLocationVO> foodSeoulLocationData(String addr) {
+				List<SeoulLocationVO> list=new ArrayList<SeoulLocationVO>();
+				try {
+					getConnection();
+					String sql="SELECT no,title,poster,rownum"
+							+ "FROM (SELECT no,title,poster "
+							+ "FROM seoul_location WHERE address LIKE '%'||?||'%' ORDER BY no ASC) "
+							+ "WHERE rownum<=5";
+					ps=conn.prepareStatement(sql);
+					ResultSet rs=ps.executeQuery();
+					while(rs.next()) {
+						SeoulLocationVO vo=new SeoulLocationVO();
+						vo.setNo(rs.getInt(1));
+						vo.setTitle(rs.getString(2));
+						vo.setPoster(rs.getString(3));
+						list.add(vo);
+					}rs.close();
+				}catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					disConnection();
+				}
+				  return list;
+			  }
+		  
+		  // 여행 호텔
+		  public List<SeoulHotelVO> foodSeoulHotelData(String addr) {
+				List<SeoulHotelVO> list=new ArrayList<SeoulHotelVO>();
+				try {
+					getConnection();
+					String sql="SELECT no,name,poster,rownum"
+							+ "FROM (SELECT no,name,poster "
+							+ "FROM seoul_hotel WHERE address LIKE '%'||?||'%' ORDER BY no ASC) "
+							+ "WHERE rownum<=5";
+					ps=conn.prepareStatement(sql);
+					ResultSet rs=ps.executeQuery();
+					while(rs.next()) {
+						SeoulHotelVO vo=new SeoulHotelVO();
+						vo.setNo(rs.getInt(1));
+						vo.setName(rs.getString(2));
+						vo.setPoster(rs.getString(3));
+						list.add(vo);
+					}rs.close();
+				}catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					disConnection();
+				}
+				  return list;
+			  }
+		  
+		  // 여행 자연
+		  public List<SeoulNatureVO> foodSeoulNatureData(String addr) {
+				List<SeoulNatureVO> list=new ArrayList<SeoulNatureVO>();
+				try {
+					getConnection();
+					String sql="SELECT no,title,poster,rownum"
+							+ "FROM (SELECT no,title,poster "
+							+ "FROM seoul_nature WHERE address LIKE '%'||?||'%' ORDER BY no ASC) "
+							+ "WHERE rownum<=5";
+					ps=conn.prepareStatement(sql);
+					ResultSet rs=ps.executeQuery();
+					while(rs.next()) {
+						SeoulNatureVO vo=new SeoulNatureVO();
+						vo.setNo(rs.getInt(1));
+						vo.setTitle(rs.getString(2));
+						vo.setPoster(rs.getString(3));
+						list.add(vo);
+					}rs.close();  
+				}catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					disConnection();
+				}
+				  return list;
+			  }
+		  
 }

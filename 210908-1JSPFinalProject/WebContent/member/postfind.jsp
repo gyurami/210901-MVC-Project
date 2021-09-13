@@ -20,7 +20,7 @@
 // jquery시작점 (jquery:javascript라이브러리) => window.onload=function(){}
 // main()
 $(function(){
-   $('#postBtn').click(function(){
+//   $('#postBtn').click(function(){
 	    // dong을 받는다 
 		let dong=$('#dong').val();
 		if(dong.trim()=="") // 공백문자 제거 (space문자)
@@ -41,7 +41,7 @@ $(function(){
 		})
    })
 	
-})
+//})
 </script>
 </head>
 <body>

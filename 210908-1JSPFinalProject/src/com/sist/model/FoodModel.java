@@ -64,10 +64,36 @@ public class FoodModel {
    @RequestMapping("food/food_detail.do")
    public String food_detail(HttpServletRequest request,HttpServletResponse response)
    {
-	   // 요청 
+	   // 요청: 번호에 해당하는 맛집을 보여달라! 
+	   String no=request.getParameter("no");
+	   
 	   // DAO
+	   FoodDAO dao=FoodDAO.newInstance();
+	   FoodVO vo=dao.foodDetailData(Integer.parseInt(no));
+	   String address=vo.getAddress(); //서울 용산구 회나무로 83 지번 서울 용산구 이태원동 2-5
+	   String addr1=address.substring(0, address.lastIndexOf("지")); //서울 용산구 회나무로 83지번 서울 용산구 이태원동 2-5 
+	   String addr2=address.substring(address.lastIndexOf("지")); //서울 용산구 회나무로 83지번 서울 용산구 이태원동 2-5
+	   String temp=address.substring(address.indexOf(" ")+1); //용산구 회나무로 83지번 서울 용산구 이태원동 2-5
+	   temp=temp.substring(0, address.indexOf(" ")); //용산구
+	
 	   // 결과값 보내기
+	   vo.setAddr1(addr1);
+	   vo.setAddr2(addr2);
+	   request.setAttribute("vo", vo);
+	   
+	   //1. 여행정보(명소, 호텔, 자연)
+	   List<SeoulLocationVO> aList=dao.foodSeoulLocationData(temp);
+	   request.setAttribute("aList", aList);
+	   List<SeoulHotelVO> bList=dao.foodSeoulHotelData(temp);
+	   request.setAttribute("bList", bList);
+	   List<SeoulNatureVO> cList=dao.foodSeoulNatureData(temp);
+	   request.setAttribute("cList", cList);
+	   
+	   //2. 댓글
+	   
 	   request.setAttribute("main_jsp", "../food/food_detail.jsp");
 	   return "../main/main.jsp";
    }
+   
+   
 }
